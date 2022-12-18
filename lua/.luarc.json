@@ -1,0 +1,32 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "Lua.workspace.library": [
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Comment.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fidget.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-blankline.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedark.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-rhubarb",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-sleuth",
+        "C:\\Program Files\\Neovim\\share\\nvim\\runtime",
+        "C:\\Program Files\\Neovim\\lib\\nvim",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp\\after",
+        "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip\\after",
+        "${3rd}/luassert/library"
+    ]
+}
