@@ -95,6 +95,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["fidget.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0" },
     loaded = true,
     path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
@@ -133,6 +134,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -174,6 +180,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
@@ -192,6 +203,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)

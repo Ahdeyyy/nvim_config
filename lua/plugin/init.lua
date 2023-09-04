@@ -11,6 +11,15 @@ require("packer").startup(function(use)
   -- Package manager
   use("wbthomason/packer.nvim")
 
+  use({
+  'j-hui/fidget.nvim',
+  tag = 'legacy',
+  config = function()
+    require("fidget").setup {
+      -- options
+    }
+  end,
+})
   use({ -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
     requires = {
@@ -39,6 +48,11 @@ require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter",
   })
+  -- transparency
+  --
+  use {
+    'xiyaowong/nvim-transparent'
+  }
 
   -- Git related plugins
   use("tpope/vim-fugitive")

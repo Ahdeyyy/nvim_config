@@ -3,7 +3,6 @@ require("plugin")
 vim.o.hlsearch = false
 
 vim.opt.guicursor = ""
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -22,11 +21,11 @@ vim.opt.backup = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 9
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.colorcolumn = "90"
+vim.opt.colorcolumn = "100"
 
 vim.g.mapleader = " "
 -- Make line numbers default
@@ -51,7 +50,8 @@ vim.wo.signcolumn = "yes"
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd([[colorscheme onedark]])
+vim.g.transparent_enabled = true
+--vim.cmd([[colorscheme onedark]])
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
@@ -110,7 +110,7 @@ require("gitsigns").setup({
 -- See `:help nvim-treesitter`
 require("nvim-treesitter.configs").setup({
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { "c", "cpp", "go", "lua", "python", "rust", "typescript", "svelte", "css", "help" },
+   ensure_installed = { "c", "cpp", "go", "lua", "python", "rust", "typescript", "svelte", "css", "help" },
 
   highlight = { enable = true },
   indent = { enable = true },
@@ -198,8 +198,6 @@ local on_attach = function(_, bufnr)
   nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
   nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
   nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-  nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-  nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
   nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
   -- See `:help K` for why this keymap
@@ -234,7 +232,7 @@ local servers = {
   "rust_analyzer",
   "pyright",
   "tsserver",
-  "sumneko_lua",
+  "lua_ls",
   "gopls",
   "tailwindcss",
   "svelte",
@@ -269,7 +267,7 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -337,7 +335,7 @@ cmp.setup({
 require("neovide")
 -- my main configs
 require("core")
-vim.cmd([[ autocmd BufWritePre * Format ]])
+-- vim.cmd([[ autocmd BufWritePre * Format ]])
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
