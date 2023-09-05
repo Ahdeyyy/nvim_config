@@ -152,11 +152,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
@@ -179,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  vim = {
+    loaded = true,
+    path = "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim",
+    url = "https://github.com/dracula/vim"
   },
   ["vim-be-good"] = {
     loaded = true,

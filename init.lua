@@ -51,7 +51,7 @@ vim.wo.signcolumn = "yes"
 -- Set colorscheme
 vim.o.termguicolors = true
 vim.g.transparent_enabled = true
---vim.cmd([[colorscheme onedark]])
+vim.cmd([[colorscheme dracula]])
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
