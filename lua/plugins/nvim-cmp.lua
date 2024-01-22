@@ -1,12 +1,11 @@
 return {
     -- Autocompletion
     "hrsh7th/nvim-cmp",
-    dependencies = { -- Snippet Engine & its associated nvim-cmp source
-    'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', -- Adds LSP completion capabilities
-    'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', -- Adds a number of user-friendly snippets
-    'rafamadriz/friendly-snippets'},
+    dependencies = {                                -- Snippet Engine & its associated nvim-cmp source
+        'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', -- Adds LSP completion capabilities
+        'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-path', -- Adds a number of user-friendly snippets
+        'rafamadriz/friendly-snippets' },
     config = function()
-
         local cmp = require("cmp")
         local luasnip = require("luasnip")
 
@@ -32,7 +31,7 @@ return {
                     else
                         fallback()
                     end
-                end, {"i", "s"}),
+                end, { "i", "s" }),
                 ["<S-Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
@@ -41,15 +40,14 @@ return {
                     else
                         fallback()
                     end
-                end, {"i", "s"})
+                end, { "i", "s" })
             }),
-            sources = {{
+            sources = { {
                 name = "nvim_lsp"
             }, {
                 name = "luasnip"
-            }}
+            } }
         })
-
     end
 
 }

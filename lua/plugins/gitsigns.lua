@@ -1,4 +1,4 @@
-return {{"tpope/vim-fugitive"}, {"tpope/vim-rhubarb"}, {
+return { { "tpope/vim-fugitive" }, { "tpope/vim-rhubarb" }, {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -30,7 +30,7 @@ return {{"tpope/vim-fugitive"}, {"tpope/vim-rhubarb"}, {
             end
 
             -- Navigation
-            map({'n', 'v'}, ']c', function()
+            map({ 'n', 'v' }, ']c', function()
                 if vim.wo.diff then
                     return ']c'
                 end
@@ -43,7 +43,7 @@ return {{"tpope/vim-fugitive"}, {"tpope/vim-rhubarb"}, {
                 desc = 'Jump to next hunk'
             })
 
-            map({'n', 'v'}, '[c', function()
+            map({ 'n', 'v' }, '[c', function()
                 if vim.wo.diff then
                     return '[c'
                 end
@@ -59,12 +59,12 @@ return {{"tpope/vim-fugitive"}, {"tpope/vim-rhubarb"}, {
             -- Actions
             -- visual mode
             map('v', '<leader>hs', function()
-                gs.stage_hunk {vim.fn.line '.', vim.fn.line 'v'}
+                gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
             end, {
                 desc = 'stage git hunk'
             })
             map('v', '<leader>hr', function()
-                gs.reset_hunk {vim.fn.line '.', vim.fn.line 'v'}
+                gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
             end, {
                 desc = 'reset git hunk'
             })
@@ -112,9 +112,9 @@ return {{"tpope/vim-fugitive"}, {"tpope/vim-rhubarb"}, {
             })
 
             -- Text object
-            map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>', {
+            map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', {
                 desc = 'select git hunk'
             })
         end
     }
-}}
+} }

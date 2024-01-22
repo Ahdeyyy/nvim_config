@@ -3,21 +3,20 @@
 return {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = {'nvim-lua/plenary.nvim', -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-    -- Only load if `make` is available. Make sure you have the system
-    -- requirements installed.
-    {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        -- NOTE: If you are having trouble with this installation,
-        --       refer to the README for telescope-fzf-native for more instructions.
-        build = 'make',
-        cond = function()
-            return vim.fn.executable 'make' == 1
-        end
-    }},
+    dependencies = { 'nvim-lua/plenary.nvim', -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+        -- Only load if `make` is available. Make sure you have the system
+        -- requirements installed.
+        {
+            'nvim-telescope/telescope-fzf-native.nvim',
+            -- NOTE: If you are having trouble with this installation,
+            --       refer to the README for telescope-fzf-native for more instructions.
+            build = 'make',
+            cond = function()
+                return vim.fn.executable 'make' == 1
+            end
+        } },
 
     config = function()
-
         require("telescope").setup({
             defaults = {
                 mappings = {
@@ -49,7 +48,7 @@ return {
 
             -- Find the Git root directory from the current file's path
             local git_root = vim.fn.systemlist('git -C ' .. vim.fn.escape(current_dir, ' ') ..
-                                                   ' rev-parse --show-toplevel')[1]
+                ' rev-parse --show-toplevel')[1]
             if vim.v.shell_error ~= 0 then
                 print 'Not a git repository. Searching on current working directory'
                 return cwd
@@ -62,7 +61,7 @@ return {
             local git_root = find_git_root()
             if git_root then
                 require('telescope.builtin').live_grep {
-                    search_dirs = {git_root}
+                    search_dirs = { git_root }
                 }
             end
         end
@@ -123,6 +122,5 @@ return {
         vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, {
             desc = '[S]earch [R]esume'
         })
-
     end
 }

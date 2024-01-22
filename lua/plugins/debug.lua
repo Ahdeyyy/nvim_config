@@ -9,10 +9,10 @@ return {
     -- NOTE: Yes, you can install new plugins here!
     'mfussenegger/nvim-dap',
     -- NOTE: And you can specify dependencies as well
-    dependencies = { -- Creates a beautiful debugger UI
-    'rcarriga/nvim-dap-ui', -- Installs the debug adapters for you
-    'williamboman/mason.nvim', 'jay-babu/mason-nvim-dap.nvim', -- Add your own debuggers here
-    'leoluz/nvim-dap-go'},
+    dependencies = {                                           -- Creates a beautiful debugger UI
+        'rcarriga/nvim-dap-ui',                                -- Installs the debug adapters for you
+        'williamboman/mason.nvim', 'jay-babu/mason-nvim-dap.nvim', -- Add your own debuggers here
+        'leoluz/nvim-dap-go' },
     config = function()
         local dap = require 'dap'
         local dapui = require 'dapui'
@@ -29,7 +29,7 @@ return {
             -- You'll need to check that you have the required things installed
             -- online, please don't ask me how to install them :)
             ensure_installed = { -- Update this to ensure that you have the debuggers for the langs you want
-            'delve'}
+                'delve' }
         }
 
         -- Basic debugging keymaps, feel free to change to your liking!
