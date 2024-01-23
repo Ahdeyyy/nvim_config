@@ -10,5 +10,6 @@ return {
     {
         'folke/which-key.nvim',
         opts = {}
-    }
+    },
+    { "nvim-telescope/telescope-ui-select.nvim" }
 }
