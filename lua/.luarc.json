@@ -28,5 +28,8 @@
         "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp\\after",
         "C:\\Users\\ahdey\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip\\after",
         "${3rd}/luassert/library"
+    ],
+    "diagnostics.globals": [
+        "vim"
     ]
 }
