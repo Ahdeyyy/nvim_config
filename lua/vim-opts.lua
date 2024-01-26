@@ -24,7 +24,7 @@ vim.opt.scrolloff = 9
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "130"
 
 -- Make line numbers default
 vim.wo.number = true
