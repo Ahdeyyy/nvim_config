@@ -22,9 +22,10 @@ vim.opt.incsearch = true
 
 vim.opt.scrolloff = 9
 vim.opt.signcolumn = "yes"
+---@diagnostic disable-next-line: undefined-field
 vim.opt.isfname:append("@-@")
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "130"
 
 -- Make line numbers default
 vim.wo.number = true
@@ -78,3 +79,6 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", {
     expr = true,
     silent = true
 })
+if vim.g.neovide then
+    vim.g.transparent_enabled = false
+end
