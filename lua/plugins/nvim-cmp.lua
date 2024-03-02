@@ -9,41 +9,31 @@ return {
         'rafamadriz/friendly-snippets',
         { "roobert/tailwindcss-colorizer-cmp.nvim", config = true }
     },
+
     opts = function(_, opts)
         -- print(opts)
         -- print(opts.formatting)
         -- -- original LazyVim kind icon formatter
         if opts.formatting and opts.formatting.format then
-            local format_kinds = opts.formatting.format
-            opts.formatting.format = function(entry, item)
+            local format_kinds = opts.config.formatting.format
+            opts.config.formatting.format = function(entry, item)
                 format_kinds(entry, item) -- add icons
                 return require("tailwindcss-colorizer-cmp").formatter(entry, item)
             end
         end
     end,
-
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
-        -- if opts.formatting and opts.formatting.format then
-        --     local format_kinds = cmp.config.formatting.format
-        --     cmp.config.formatting.format = function(entry, item)
-        --         format_kinds(entry, item)
-        --         return require("tailwindcss-colorizer-cmp").formatter(entry, item)
-        --     end
-        -- end
-        --
-        -- local format_kinds = require("cmp").config.formatting.format
-        --
-        -- require("cmp").config.formatting.format =
-        --     function(entry, item)
-        --         format_kinds(entry, item)
-        --         return require("tailwindcss-colorizer-cmp").formatter(entry, item)
-        --     end
-        -- require("cmp").config.formatting = {
-        --     format = require("tailwindcss-colorizer-cmp").formatter
-        -- }
 
+
+        -- cmp.config.formatting = {
+        --     --[[  format = require("tailwindcss-colorizer-cmp").formatter ]]
+        --     format = function(entry, item)
+        --         format_kinds(entry, item)
+        --         return require(".tailwindcss-colorizer-cmp").formatter(entry, item)
+        --     end
+        -- }
         cmp.setup({
 
             snippet = {
