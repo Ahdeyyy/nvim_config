@@ -11,7 +11,7 @@ return {
                 icons_enabled = true,
                 component_separators = { left = '|', right = '|' },
                 section_separators = { left = '', right = '' },
-                theme = "palenight",
+                theme = "tokyonight",
             }
         })
     end
