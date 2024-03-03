@@ -31,9 +31,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*"
 })
-require("cmp").config.formatting = {
-  format = require("tailwindcss-colorizer-cmp").formatter
-}
 -- neovide configs
 require("neovide")
 -- my main configs
