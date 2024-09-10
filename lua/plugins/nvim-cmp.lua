@@ -14,7 +14,9 @@ return {
 
     opts = function()
         local cmp = require("cmp")
+        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
         local luasnip = require("luasnip")
+        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
         -- vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
         return {
             completion = {
