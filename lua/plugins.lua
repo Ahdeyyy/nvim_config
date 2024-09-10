@@ -1,39 +1,40 @@
 return {
     { "MunifTanjim/nui.nvim",    lazy = true },
+    { "echasnovski/mini.icons",  version = false },
+    { "nvim-neotest/nvim-nio" },
     { "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
-    { 'ThePrimeagen/vim-be-good' }, {
-    'numToStr/Comment.nvim',
-    opts = {
-        -- add any options here
-    },
-    lazy = false
-},
+    { "ThePrimeagen/vim-be-good" },
     {
-        'folke/which-key.nvim',
-        opts = {}
+        "numToStr/Comment.nvim",
+        opts = {
+            -- add any options here
+        },
+        lazy = false,
+    },
+    {
+        "folke/which-key.nvim",
+        opts = {},
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
         config = function()
-            require("telescope").setup {
+            require("telescope").setup({
                 extensions = {
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown {
-                        }
-
-                    }
-                }
-            }
+                        require("telescope.themes").get_dropdown({}),
+                    },
+                },
+            })
             require("telescope").load_extension("ui-select")
-        end
+        end,
     },
     { "nvim-tree/nvim-web-devicons", lazy = true },
     {
-        'goolord/alpha-nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        "goolord/alpha-nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require 'alpha'.setup(require 'alpha.themes.startify'.config)
-        end
+            require("alpha").setup(require("alpha.themes.startify").config)
+        end,
     },
     {
         "folke/noice.nvim",
@@ -68,28 +69,57 @@ return {
         },
         -- stylua: ignore
         keys = {
-            { "<S-Enter>",   function() require("noice").redirect(vim.fn.getcmdline()) end,                 mode = "c",
-                                                                                                                                            desc =
-                "Redirect Cmdline" },
-            { "<leader>snl", function() require("noice").cmd("last") end,                                   desc =
-            "Noice Last Message" },
-            { "<leader>snh", function() require("noice").cmd("history") end,                                desc =
-            "Noice History" },
-            { "<leader>sna", function() require("noice").cmd("all") end,                                    desc =
-            "Noice All" },
-            { "<leader>snd", function() require("noice").cmd("dismiss") end,                                desc =
-            "Dismiss All" },
-            { "<c-f>",       function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end,  silent = true,
-                                                                                                                                            expr = true,
-                                                                                                                                                                      desc =
-                "Scroll forward",                                                                                                                                                           mode = {
-                "i", "n", "s" } },
-            { "<c-b>",       function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end,
-                                                                                                                silent = true,
-                                                                                                                                            expr = true,
-                                                                                                                                                                      desc =
-                "Scroll backward",                                                                                                                                                          mode = {
-                "i", "n", "s" } },
+            {
+                "<S-Enter>",
+                function() require("noice").redirect(vim.fn.getcmdline()) end,
+                mode = "c",
+                desc =
+                "Redirect Cmdline"
+            },
+            {
+                "<leader>snl",
+                function() require("noice").cmd("last") end,
+                desc =
+                "Noice Last Message"
+            },
+            {
+                "<leader>snh",
+                function() require("noice").cmd("history") end,
+                desc =
+                "Noice History"
+            },
+            {
+                "<leader>sna",
+                function() require("noice").cmd("all") end,
+                desc =
+                "Noice All"
+            },
+            {
+                "<leader>snd",
+                function() require("noice").cmd("dismiss") end,
+                desc =
+                "Dismiss All"
+            },
+            {
+                "<c-f>",
+                function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end,
+                silent = true,
+                expr = true,
+                desc =
+                "Scroll forward",
+                mode = {
+                    "i", "n", "s" }
+            },
+            {
+                "<c-b>",
+                function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end,
+                silent = true,
+                expr = true,
+                desc =
+                "Scroll backward",
+                mode = {
+                    "i", "n", "s" }
+            },
         },
     },
     {
@@ -98,18 +128,17 @@ return {
         cmd = "Silicon",
         init = function()
             local wk = require("which-key")
-            wk.register({
-                ["<leader>sc"] = { ":Silicon<CR>", "Snapshot Code" },
-
-            }, { mode = "v" })
+            wk.add({
+                { "<leader>sc", ":Silicon<CR>", desc = "Snapshot Code", mode = "v" },
+            })
         end,
         config = function()
             require("silicon").setup({
                 -- Configuration here, or leave empty to use defaults
                 font = "GeistMono Nerd Font Mono=34;Noto Color Emoji=34",
-                theme = "Dracula"
+                theme = "OneHalfLight",
             })
-        end
+        end,
     },
     {
         "folke/todo-comments.nvim",
@@ -127,7 +156,6 @@ return {
             vim.keymap.set("n", "<leader>pt", function()
                 require("todo-comments").jump_prev()
             end, { desc = "Previous todo comment" })
-        end
-
-    }
+        end,
+    },
 }

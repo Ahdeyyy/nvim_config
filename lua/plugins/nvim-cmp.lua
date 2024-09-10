@@ -2,20 +2,20 @@ return {
     -- Autocompletion
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
-    dependencies = {                -- Snippet Engine & its associated nvim-cmp source
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip', -- Adds LSP completion capabilities
-        'hrsh7th/cmp-nvim-lsp',
+    dependencies = {          -- Snippet Engine & its associated nvim-cmp source
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip", -- Adds LSP completion capabilities
+        "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
-        'hrsh7th/cmp-path', -- Adds a number of user-friendly snippets
-        'rafamadriz/friendly-snippets',
-        { "roobert/tailwindcss-colorizer-cmp.nvim", config = true }
+        "hrsh7th/cmp-path", -- Adds a number of user-friendly snippets
+        "rafamadriz/friendly-snippets",
+        { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
     },
 
     opts = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
-        vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+        -- vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
         return {
             completion = {
                 completeopt = "menu,menuone,noinsert",
@@ -47,7 +47,7 @@ return {
             snippet = {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
-                end
+                end,
             },
             experimental = {
                 ghost_text = {
@@ -57,52 +57,52 @@ return {
             formatting = {
                 format = function(_, item)
                     local icons = {
-                        Array         = " ",
-                        Boolean       = "󰨙 ",
-                        Class         = " ",
-                        Codeium       = "󰘦 ",
-                        Color         = " ",
-                        Control       = " ",
-                        Collapsed     = " ",
-                        Constant      = "󰏿 ",
-                        Constructor   = " ",
-                        Copilot       = " ",
-                        Enum          = " ",
-                        EnumMember    = " ",
-                        Event         = " ",
-                        Field         = " ",
-                        File          = " ",
-                        Folder        = " ",
-                        Function      = "󰊕 ",
-                        Interface     = " ",
-                        Key           = " ",
-                        Keyword       = " ",
-                        Method        = "󰊕 ",
-                        Module        = " ",
-                        Namespace     = "󰦮 ",
-                        Null          = " ",
-                        Number        = "󰎠 ",
-                        Object        = " ",
-                        Operator      = " ",
-                        Package       = " ",
-                        Property      = " ",
-                        Reference     = " ",
-                        Snippet       = " ",
-                        String        = " ",
-                        Struct        = "󰆼 ",
-                        TabNine       = "󰏚 ",
-                        Text          = " ",
+                        Array = " ",
+                        Boolean = "󰨙 ",
+                        Class = " ",
+                        Codeium = "󰘦 ",
+                        Color = " ",
+                        Control = " ",
+                        Collapsed = " ",
+                        Constant = "󰏿 ",
+                        Constructor = " ",
+                        Copilot = " ",
+                        Enum = " ",
+                        EnumMember = " ",
+                        Event = " ",
+                        Field = " ",
+                        File = " ",
+                        Folder = " ",
+                        Function = "󰊕 ",
+                        Interface = " ",
+                        Key = " ",
+                        Keyword = " ",
+                        Method = "󰊕 ",
+                        Module = " ",
+                        Namespace = "󰦮 ",
+                        Null = " ",
+                        Number = "󰎠 ",
+                        Object = " ",
+                        Operator = " ",
+                        Package = " ",
+                        Property = " ",
+                        Reference = " ",
+                        Snippet = " ",
+                        String = " ",
+                        Struct = "󰆼 ",
+                        TabNine = "󰏚 ",
+                        Text = " ",
                         TypeParameter = " ",
-                        Unit          = " ",
-                        Value         = " ",
-                        Variable      = "󰀫 ",
+                        Unit = " ",
+                        Value = " ",
+                        Variable = "󰀫 ",
                     }
                     if icons[item.kind] then
                         item.kind = icons[item.kind] .. item.kind
                     end
                     return item
                 end,
-            }
+            },
         }
     end,
     config = function(_, opts)
@@ -160,6 +160,5 @@ return {
         --     },
         -- }
         --[[ }) ]]
-    end
-
+    end,
 }
