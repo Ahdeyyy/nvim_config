@@ -51,11 +51,11 @@ return {
                     luasnip.lsp_expand(args.body)
                 end,
             },
-            experimental = {
-                ghost_text = {
-                    hl_group = "CmpGhostText",
-                },
-            },
+            -- experimental = {
+            --     ghost_text = {
+            --         hl_group = "CmpGhostText",
+            --     },
+            -- },
             formatting = {
                 format = function(_, item)
                     local icons = {
