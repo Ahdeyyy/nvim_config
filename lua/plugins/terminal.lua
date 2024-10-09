@@ -10,7 +10,7 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-vim.keymap.set("n", "<leader>tt", "ToggleTerm <CR>")
+vim.keymap.set("n", "<C-t>", "ToggleTerm <CR>")
 
 return {
 
@@ -20,7 +20,7 @@ return {
 		config = true,
 		opts = {
 			size = 14,
-			open_mapping = [[<leader>tt]],
+			open_mapping = [[<C-t>]],
 			shade_terminals = true, -- NOTE: this option takes priority over highlights specified so if you specify Normal highlights you should set this to false
 			shading_factor = "10",
 			noremap = true,
