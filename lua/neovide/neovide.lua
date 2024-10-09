@@ -1,4 +1,4 @@
-local transparency = 0.9
+local transparency = 0.8
 local cursor_vfx_mode = "railgun"
 local scroll_animation_length = 0.3
 local hide_mouse_when_typing = false
